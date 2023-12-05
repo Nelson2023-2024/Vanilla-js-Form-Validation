@@ -1,8 +1,36 @@
-let nameError = document.getElementById('name-error')
-let phoneError = document.getElementById('phone-error')
-let emailError = document.getElementById('email-error')
-let messsageError = document.getElementById('message-error')
-let submitError = document.getElementById('submit-error')
+let form = document.getElementById('contact-form');
+let nameError = document.getElementById('name-error');
+let phoneError = document.getElementById('phone-error');
+let emailError = document.getElementById('email-error');
+let messsageError = document.getElementById('message-error');
+let submitError = document.getElementById('submit-error');
+
+function validateForm() {
+    // Perform validation for each field
+    const isNameValid = validateName();
+    const isPhoneValid = validatePhone();
+    const isEmailValid = validateEmail();
+    const isMessageValid = validateMessage();
+
+    // Check if all fields are valid
+    if (isNameValid && isPhoneValid && isEmailValid && isMessageValid) {
+        // If all validations pass, remove the event listener to allow form submission
+        form.removeEventListener('submit', formSubmissionHandler);
+        console.log('Form validation passed. Form will be submitted.');
+    } else {
+        console.log('Form validation failed. Submission prevented.');
+    }
+}
+
+function formSubmissionHandler(e) {
+    e.preventDefault();
+    validateForm();
+}
+
+// Event listener for form submission
+form.addEventListener('submit', formSubmissionHandler);
+
+// Rest of the validation functions remain the same
 
 function validateName(){
     let nameInput = document.getElementById('name-input').value
