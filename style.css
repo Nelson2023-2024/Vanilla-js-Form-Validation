@@ -94,3 +94,10 @@ form button{
 #submit-error{
     color: red;
 }
+
+/*JS*/
+.input-group span i{
+    color: green;
+    font-size: 20px;
+
+}
