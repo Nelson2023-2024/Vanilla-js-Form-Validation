@@ -20,3 +20,18 @@ function validateName(){
     return true
 
 }
+
+function validatePhone(){
+    let phoneInput = document.getElementById('phone-input').value
+    if(phoneInput.length == 0){
+        phoneError.innerHTML = 'Phone number is required'
+        return false
+    }
+    if(!phoneInput.match(/^[0-9]{10}$/)){
+        phoneError.innerHTML = 'Enter valid Phone Number'
+        return false
+    }
+
+    phoneError.innerHTML = '<i class="fa-solid fa-check"></i>'
+    return true
+}
