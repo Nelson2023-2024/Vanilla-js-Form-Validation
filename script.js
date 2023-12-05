@@ -35,3 +35,19 @@ function validatePhone(){
     phoneError.innerHTML = '<i class="fa-solid fa-check"></i>'
     return true
 }
+
+
+function validateEmail(){
+    let EmailInput = document.getElementById('Email-input').value
+
+    if(EmailInput == 0){
+        emailError.innerHTML = 'Email is required'
+        return false
+    }
+    if(!EmailInput.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/)){
+        emailError.innerHTML = 'Invalid Email Address'
+        return false
+    }
+    emailError.innerHTML = '<i class="fa-solid fa-check"></i>'
+    return true
+}
