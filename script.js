@@ -51,3 +51,18 @@ function validateEmail(){
     emailError.innerHTML = '<i class="fa-solid fa-check"></i>'
     return true
 }
+
+function validateMessage(){
+    let messageInput = document.getElementById('message-input').value
+    let required = 30
+    let left = required - messageInput.length
+
+    if(left > 0){
+        messsageError.innerHTML = left + " more characters required"
+        return false
+    }
+    messsageError.innerHTML = '<i class="fa-solid fa-check"></i>'
+
+    return true
+ 
+}
